@@ -5,7 +5,6 @@ import shutil
 import sys
 import requests
 from bs4 import BeautifulSoup as BS
-from PIL import Image
 
 URL = sys.argv[1]
 DIR = os.path.join(os.getcwd(), sys.argv[2])
