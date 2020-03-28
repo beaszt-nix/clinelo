@@ -3,7 +3,7 @@
 mkdir library
 mkdir DB
 
-chmod +x main.py
+chmod +x clinelo.py
 chmod +x chapter_dl.py
 chmod +x chapter_list_update.py
 
