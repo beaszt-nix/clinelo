@@ -6,6 +6,7 @@ import argparse
 import shutil
 
 global HOME
+
 HOME = os.environ['HOME']
 parser = argparse.ArgumentParser()
 parser.add_argument("-a", "--add", action="store_true", help="To add Manga")
@@ -28,6 +29,9 @@ else:
 if args.add is True:
     if args.name not in db:
         db[args.name] = args.url
+        with open(listDB, 'w') as f:
+            json.dump(db,f)
+            f.close()
         DIRNAME=args.name.replace(' ', '_')
         os.mkdir(os.path.join('{}/clinelo/library'.format(HOME), DIRNAME))
         os.system('./chapter_list_update.py "' + args.name + '" ' + args.url)
